@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Meme Editor View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MemeEditorViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PA5-qb-Lxe">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n3a-z3-UXS">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
@@ -43,7 +43,7 @@
                                 </items>
                             </toolbar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pTO-fD-3cF">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <items>
                                     <barButtonItem systemItem="action" id="O9y-uY-Mve">
                                         <connections>
@@ -58,12 +58,6 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="tXg-3R-NFx">
-                                <rect key="frame" x="0.0" y="64" width="375" height="85"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name=".SFNSDisplay-Regular" family=".SF NS Display" pointSize="40"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="kjz-FU-LBx">
                                 <rect key="frame" x="0.0" y="573" width="375" height="30"/>
                                 <constraints>
@@ -73,13 +67,19 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="tXg-3R-NFx">
+                                <rect key="frame" x="0.0" y="44" width="375" height="85"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name=".SFNSDisplay-Regular" family=".SF NS Display" pointSize="40"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="pTO-fD-3cF" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="0cX-kf-Bib"/>
+                            <constraint firstItem="pTO-fD-3cF" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="0cX-kf-Bib"/>
                             <constraint firstItem="pTO-fD-3cF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1Qt-R0-mYw"/>
                             <constraint firstItem="kjz-FU-LBx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1c0-bV-RLI"/>
-                            <constraint firstItem="PA5-qb-Lxe" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="2hj-hL-tcH"/>
+                            <constraint firstItem="PA5-qb-Lxe" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="2hj-hL-tcH"/>
                             <constraint firstAttribute="trailing" secondItem="n3a-z3-UXS" secondAttribute="trailing" id="3Pe-7F-Imp"/>
                             <constraint firstAttribute="bottom" secondItem="PA5-qb-Lxe" secondAttribute="bottom" id="9av-zy-dpC"/>
                             <constraint firstItem="n3a-z3-UXS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BGY-x0-QSg"/>
@@ -91,7 +91,7 @@
                             <constraint firstItem="n3a-z3-UXS" firstAttribute="top" secondItem="kjz-FU-LBx" secondAttribute="bottom" constant="20" id="rur-qD-p2D"/>
                             <constraint firstAttribute="trailing" secondItem="tXg-3R-NFx" secondAttribute="trailing" id="v25-Z4-Rty"/>
                             <constraint firstAttribute="trailing" secondItem="pTO-fD-3cF" secondAttribute="trailing" id="yHr-7P-g3w"/>
-                            <constraint firstItem="tXg-3R-NFx" firstAttribute="top" secondItem="pTO-fD-3cF" secondAttribute="bottom" constant="23" id="yct-mZ-mNM"/>
+                            <constraint firstItem="tXg-3R-NFx" firstAttribute="top" secondItem="pTO-fD-3cF" secondAttribute="bottom" id="yct-mZ-mNM"/>
                         </constraints>
                     </view>
                     <connections>

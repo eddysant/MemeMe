@@ -1,5 +1,5 @@
 //
-//  ViewController+Keyboard.swift
+//  MemeEditorViewController+Keyboard.swift
 //  MemeMe
 //
 //  Created by Sant, Eddy on 2017-01-10.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension ViewController  {
+extension MemeEditorViewController  {
     
     func keyboardWillShow(_ notification:Notification) {
         if bottomText.isFirstResponder {

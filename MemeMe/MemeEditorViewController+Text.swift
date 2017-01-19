@@ -1,5 +1,5 @@
 //
-//  ViewController+Text.swift
+//  MemeEditorViewController+Text.swift
 //  MemeMe
 //
 //  Created by Sant, Eddy on 2017-01-10.
@@ -8,12 +8,9 @@
 
 import UIKit
 
-extension ViewController : UITextFieldDelegate {
+extension MemeEditorViewController : UITextFieldDelegate {
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        if textField.tag == 2 {
-            subscribeToKeyboardNotifications()
-        }
         return true
     }
     
@@ -29,7 +26,6 @@ extension ViewController : UITextFieldDelegate {
         } else if textField.tag == 2 && textField.text == "" {
             textField.text = "BOTTOM"
         }
-        unsubscribeFromKeyboardNotifications()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

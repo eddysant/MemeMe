@@ -1,5 +1,5 @@
 //
-//  ViewController+Image.swift
+//  MemeEditorViewController+Image.swift
 //  MemeMe
 //
 //  Created by Sant, Eddy on 2017-01-10.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension ViewController: UIImagePickerControllerDelegate {
+extension MemeEditorViewController: UIImagePickerControllerDelegate {
     
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -20,21 +20,21 @@ extension ViewController: UIImagePickerControllerDelegate {
     }
     
     @IBAction func pickAnImageFromAlbum() {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .photoLibrary
-        present(imagePicker, animated: true, completion: nil)
+        pickAnImageFromSource(source: .photoLibrary)
     }
     
     @IBAction func pickAnImageFromCamera() {
-        
+        pickAnImageFromSource(source: .camera)
+    }
+    
+    func pickAnImageFromSource(source: UIImagePickerControllerSourceType) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        imagePicker.sourceType = .camera
+        imagePicker.sourceType = source
         present(imagePicker, animated: true, completion: nil)
     }
     
-func generateMemedImage() -> UIImage {
+    func generateMemedImage() -> UIImage {
         
         hideToolBars(true)
         

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MemeEditorViewController
 //  MemeMe
 //
 //  Created by Sant, Eddy on 2017-01-09.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UINavigationControllerDelegate  {
+class MemeEditorViewController: UIViewController, UINavigationControllerDelegate  {
 
     @IBOutlet weak var imageViewPicker: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
@@ -31,6 +31,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate  {
         subscribeToKeyboardNotifications()
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     func initTextField(_ textField: UITextField) {
         let memeTextAttributes:[String:Any] = [
             NSStrokeColorAttributeName: UIColor.black,
@@ -45,8 +49,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate  {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        topText.resignFirstResponder()
-        bottomText.resignFirstResponder()
         unsubscribeFromKeyboardNotifications()
     }
     
@@ -80,8 +82,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate  {
     }
     
     func hideToolBars(_ show:Bool){
-        topToolBar.isHidden = show;
-        bottomToolBar.isHidden = show;
+        topToolBar.isHidden = show
+        bottomToolBar.isHidden = show
     }
 
 }
